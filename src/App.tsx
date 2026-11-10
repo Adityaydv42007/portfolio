@@ -104,11 +104,11 @@ export default function App() {
     if (currentTheme === 'dark') {
       document.documentElement.classList.add('dark');
       document.documentElement.classList.remove('light');
-      document.body.className = 'bg-[#080B0A] text-[#F3F5F2] selection:bg-[#00D6A0]/20 selection:text-white transition-colors duration-300';
+      document.body.className = 'bg-[#090A0F] text-[#F8FAFC] selection:bg-[#38BDF8]/25 selection:text-white transition-colors duration-300';
     } else {
       document.documentElement.classList.remove('dark');
       document.documentElement.classList.add('light');
-      document.body.className = 'bg-[#F7F5F0] text-[#141B18] selection:bg-[#0A8F6C]/20 selection:text-[#141B18] transition-colors duration-300';
+      document.body.className = 'bg-[#F8FAFC] text-[#0F172A] selection:bg-[#F43F5E]/20 selection:text-[#0F172A] transition-colors duration-300';
     }
   }, [currentTheme]);
 
@@ -138,16 +138,16 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen relative selection:bg-[#00D6A0]/25 ${
-      currentTheme === 'light' ? 'bg-[#F7F5F0] text-[#141B18]' : 'bg-[#080B0A] text-[#F3F5F2]'
+    <div className={`min-h-screen relative selection:bg-[#38BDF8]/25 ${
+      currentTheme === 'light' ? 'bg-[#F8FAFC] text-[#0F172A]' : 'bg-[#090A0F] text-[#F8FAFC]'
     }`}>
-      {/* 1. Scroll-linked Progress Bar */}
+      {/* 1. Scroll-linked Progress Bar in Red-Blue-Green spectrum */}
       <div
         className="fixed top-0 left-0 right-0 h-[3px] z-50 pointer-events-none"
         aria-hidden="true"
       >
         <div
-          className="h-full bg-gradient-to-r from-[#00D6A0] via-[#176B50] to-[#C9A96E] transition-all duration-150 ease-out shadow-[0_0_8px_rgba(0,214,160,0.6)]"
+          className="h-full bg-gradient-to-r from-[#F43F5E] via-[#38BDF8] to-[#10B981] transition-all duration-150 ease-out shadow-[0_0_10px_rgba(56,189,248,0.6)]"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
@@ -155,7 +155,7 @@ export default function App() {
       {/* 2. Desktop Subtle Ambient Mouse Follower */}
       {isPointerDevice && currentTheme === 'dark' && (
         <div
-          className="fixed pointer-events-none z-30 w-[400px] h-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#00D6A0]/[0.035] blur-[100px] transition-transform duration-75 ease-out"
+          className="fixed pointer-events-none z-30 w-[420px] h-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-[#F43F5E]/[0.02] via-[#38BDF8]/[0.025] to-[#10B981]/[0.02] blur-[100px] transition-transform duration-75 ease-out"
           style={{
             left: `${cursorPos.x}px`,
             top: `${cursorPos.y}px`,

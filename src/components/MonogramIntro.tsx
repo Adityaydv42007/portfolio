@@ -40,38 +40,46 @@ export const MonogramIntro: React.FC<MonogramIntroProps> = ({ onComplete, lang }
     <div
       role="dialog"
       aria-label="Introduction"
-      className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#080B0A] transition-opacity duration-500 ${
+      className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#090A0F] transition-opacity duration-500 ${
         exiting ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
     >
-      {/* Ambient background glow */}
-      <div className="absolute w-96 h-96 rounded-full bg-[#00D6A0]/10 blur-3xl pointer-events-none animate-emerald-glow" />
+      {/* Ambient Red, Blue, Green RGB glow orbs */}
+      <div className="absolute w-[350px] h-[350px] rounded-full bg-[#F43F5E]/15 blur-3xl pointer-events-none -top-10 -left-10 animate-pulse" />
+      <div className="absolute w-[400px] h-[400px] rounded-full bg-[#38BDF8]/15 blur-3xl pointer-events-none top-1/3 right-0 animate-rgb-pulse" />
+      <div className="absolute w-[350px] h-[350px] rounded-full bg-[#10B981]/15 blur-3xl pointer-events-none -bottom-10 left-1/3 animate-pulse" />
 
       <div className="relative z-10 flex flex-col items-center text-center px-6">
-        {/* Monogram emblem */}
+        {/* Monogram emblem with RGB chromatic layers */}
         <div className="relative w-24 h-24 mb-6 flex items-center justify-center">
-          <div className="absolute inset-0 rounded-full border border-[#00D6A0]/25 animate-ping opacity-25" />
-          <div className="absolute inset-0 rounded-full border border-[#C9A96E]/40 shadow-[0_0_20px_rgba(0,214,160,0.2)]" />
-          <span className="font-heading text-3xl font-bold tracking-widest text-[#F3F5F2]">
-            A<span className="text-[#00D6A0]">Y</span>
+          <div className="absolute inset-0 rounded-full border border-[#F43F5E]/30 animate-ping opacity-30" />
+          <div className="absolute inset-1 rounded-full border border-[#38BDF8]/50 shadow-[0_0_20px_rgba(56,189,248,0.3)]" />
+          <div className="absolute inset-0 rounded-full border border-[#10B981]/40" />
+          <span className="font-heading text-3xl font-extrabold tracking-widest text-[#F8FAFC]">
+            <span className="text-[#38BDF8]">A</span>
+            <span className="text-[#F43F5E]">Y</span>
           </span>
         </div>
 
-        {/* Champagne gold & emerald gradient line */}
-        <div className="w-24 h-0.5 bg-gradient-to-r from-transparent via-[#C9A96E] to-transparent mb-4 transition-all duration-700" />
+        {/* Tri-color Red-Blue-Green gradient line */}
+        <div className="w-28 h-1 bg-gradient-to-r from-[#F43F5E] via-[#38BDF8] to-[#10B981] mb-5 rounded-full shadow-[0_0_12px_rgba(56,189,248,0.4)]" />
 
         {/* Identity & Subtitle */}
-        <h1 className="font-heading text-xl md:text-2xl font-bold tracking-wide text-[#F3F5F2] mb-1">
+        <h1 className="font-heading text-2xl md:text-3xl font-extrabold tracking-wide text-[#F8FAFC] mb-2">
           Aditya Yadav
         </h1>
-        <p className="text-xs uppercase tracking-widest text-[#00D6A0] font-medium">
-          AI &middot; Data Analytics &middot; Technical Education
+        <p className="text-xs uppercase tracking-widest font-semibold flex items-center gap-2">
+          <span className="text-[#F43F5E]">AI</span>
+          <span className="text-white/30">&middot;</span>
+          <span className="text-[#38BDF8]">Data Analytics</span>
+          <span className="text-white/30">&middot;</span>
+          <span className="text-[#10B981]">Technical Education</span>
         </p>
 
         {/* Skip button for accessibility */}
         <button
           onClick={handleSkip}
-          className="mt-8 px-4 py-1.5 text-xs text-[#A5AEA9] hover:text-[#F3F5F2] transition-colors border border-white/10 hover:border-[#00D6A0]/40 rounded-full focus:outline-none focus:ring-1 focus:ring-[#00D6A0]"
+          className="mt-8 px-4 py-1.5 text-xs text-[#94A3B8] hover:text-[#F8FAFC] transition-colors border border-white/10 hover:border-[#38BDF8]/50 rounded-full focus:outline-none focus:ring-1 focus:ring-[#38BDF8]"
           aria-label="Skip introductory animation"
         >
           {lang === 'hi' ? 'छोड़ें (Skip)' : 'Skip Intro'} &rarr;

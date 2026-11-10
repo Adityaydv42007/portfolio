@@ -48,22 +48,22 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
       <div
         className={`w-full max-w-4xl h-[90vh] rounded-3xl border shadow-[0_25px_60px_rgba(0,0,0,0.8)] flex flex-col overflow-hidden relative ${
           currentTheme === 'light'
-            ? 'bg-white border-stone-200 text-stone-900'
-            : 'bg-[#141B18] border-[#00D6A0]/20 text-[#F3F5F2]'
+            ? 'bg-white border-slate-200 text-slate-900'
+            : 'bg-[#121624] border-slate-800 text-[#F8FAFC]'
         }`}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header Bar */}
-        <div className="px-6 py-4 border-b border-white/10 flex items-center justify-between shrink-0 bg-[#080B0A]">
+        <div className="px-6 py-4 border-b border-slate-800 flex items-center justify-between shrink-0 bg-[#090A0F]">
           <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-[#0D1713] border border-[#00D6A0]/40 flex items-center justify-center text-[#00D6A0]">
+            <div className="w-9 h-9 rounded-xl bg-[#38BDF8]/10 border border-[#38BDF8]/40 flex items-center justify-center text-[#38BDF8]">
               <FileText className="w-5 h-5" />
             </div>
             <div>
-              <h3 id="resume-modal-title" className="font-heading font-bold text-sm sm:text-base text-[#F3F5F2]">
+              <h3 id="resume-modal-title" className="font-heading font-bold text-sm sm:text-base text-[#F8FAFC]">
                 Aditya Yadav &mdash; Official Resume
               </h3>
-              <p className="text-xs text-[#A5AEA9] font-mono">
+              <p className="text-xs text-slate-400 font-mono">
                 Kanpur, Uttar Pradesh &middot; BBA &middot; Tally &middot; AI
               </p>
             </div>
@@ -74,17 +74,17 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
               href={p.resumePdfUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-xl border border-white/10 text-[#A5AEA9] hover:text-[#F3F5F2] hover:bg-white/10 transition-colors hidden sm:flex items-center gap-1.5 text-xs font-mono"
+              className="p-2 rounded-xl border border-slate-700/60 text-slate-300 hover:text-white hover:bg-white/10 transition-colors hidden sm:flex items-center gap-1.5 text-xs font-mono"
               title={t.openNewTab}
             >
-              <ExternalLink className="w-3.5 h-3.5 text-[#00D6A0]" />
+              <ExternalLink className="w-3.5 h-3.5 text-[#38BDF8]" />
               <span>{t.openNewTab}</span>
             </a>
 
             <a
               href={p.resumePdfUrl}
               download="Aditya_Yadav_Finance_Resume.pdf"
-              className="px-4 py-2 rounded-xl bg-[#00D6A0] hover:bg-[#00D6A0]/90 text-[#080B0A] font-bold text-xs transition-all shadow-[0_0_15px_rgba(0,214,160,0.3)] flex items-center gap-1.5 active:scale-95"
+              className="px-4 py-2 rounded-xl bg-[#F43F5E] hover:bg-[#F43F5E]/90 text-white font-bold text-xs transition-all shadow-[0_0_15px_rgba(244,63,94,0.3)] flex items-center gap-1.5 active:scale-95"
             >
               <Download className="w-3.5 h-3.5" />
               <span>{t.downloadPdf}</span>
@@ -92,7 +92,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
 
             <button
               onClick={onClose}
-              className="p-2 rounded-xl border border-white/10 text-[#A5AEA9] hover:text-[#F3F5F2] hover:bg-white/10 transition-colors"
+              className="p-2 rounded-xl border border-slate-700/60 text-slate-400 hover:text-white hover:bg-white/10 transition-colors"
               aria-label={t.closeModal}
             >
               <X className="w-4 h-4" />
@@ -101,7 +101,7 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
         </div>
 
         {/* Embedded PDF Viewer */}
-        <div className="flex-1 w-full h-full bg-[#0D1713] relative overflow-hidden">
+        <div className="flex-1 w-full h-full bg-[#090A0F] relative overflow-hidden">
           <iframe
             src={`${p.resumePdfUrl}#view=FitH`}
             title="Aditya Yadav Resume PDF Viewer"
@@ -110,12 +110,12 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({
         </div>
 
         {/* Footer fallback info */}
-        <div className="px-6 py-3 bg-[#080B0A] border-t border-white/10 flex items-center justify-between text-xs text-[#A5AEA9] shrink-0 font-mono">
+        <div className="px-6 py-3 bg-[#090A0F] border-t border-slate-800 flex items-center justify-between text-xs text-slate-400 shrink-0 font-mono">
           <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-3.5 h-3.5 text-[#00D6A0]" />
+            <CheckCircle2 className="w-3.5 h-3.5 text-[#10B981]" />
             <span>Verified Source of Truth: Allenhouse Business School & VCEC Tally Academy</span>
           </div>
-          <span className="text-[11px] text-[#00D6A0]">PDF Asset Verified</span>
+          <span className="text-[11px] text-[#10B981]">PDF Asset Verified</span>
         </div>
       </div>
     </div>

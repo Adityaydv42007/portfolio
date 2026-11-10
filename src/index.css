@@ -9,17 +9,16 @@
     --font-mono: 'JetBrains Mono', monospace;
     --font-hindi: 'Noto Sans Devanagari', 'Inter', sans-serif;
 
-    /* Dark Mode Defaults */
-    --color-bg-primary: #080B0A;
-    --color-bg-secondary: #0D1713;
-    --color-card: #141B18;
-    --color-accent-primary: #00D6A0;
-    --color-accent-secondary: #176B50;
-    --color-accent-gold: #C9A96E;
-    --color-text-primary: #F3F5F2;
-    --color-text-secondary: #A5AEA9;
-    --border-emerald: rgba(0, 214, 160, 0.15);
-    --border-silver: rgba(165, 174, 169, 0.12);
+    /* RGB Dark Mode Defaults */
+    --color-bg-primary: #090A0F;
+    --color-bg-secondary: #0F121C;
+    --color-card: #121624;
+    --color-red: #F43F5E;
+    --color-blue: #38BDF8;
+    --color-green: #10B981;
+    --color-text-primary: #F8FAFC;
+    --color-text-secondary: #94A3B8;
+    --border-rgb: rgba(56, 189, 248, 0.15);
   }
 
   html {
@@ -47,74 +46,76 @@
   }
 }
 
-/* Custom scrollbar with emerald & champagne gold touch */
+/* Custom RGB scrollbar */
 ::-webkit-scrollbar {
   width: 7px;
   height: 7px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #080B0A;
+  background: #090A0F;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(0, 214, 160, 0.25);
+  background: linear-gradient(180deg, #F43F5E, #38BDF8, #10B981);
   border-radius: 9999px;
-  border: 1px solid rgba(0, 214, 160, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(0, 214, 160, 0.5);
+  background: linear-gradient(180deg, #FB7185, #60A5FA, #34D399);
 }
 
-/* Light mode overrides */
+/* Light mode overrides with accessible RGB palette */
 html.light {
-  --color-bg-primary: #F7F5F0;
-  --color-bg-secondary: #EFEBE2;
+  --color-bg-primary: #F8FAFC;
+  --color-bg-secondary: #EDF2F7;
   --color-card: #FFFFFF;
-  --color-accent-primary: #0A8F6C;
-  --color-accent-secondary: #176B50;
-  --color-accent-gold: #A28247;
-  --color-text-primary: #141B18;
-  --color-text-secondary: #4E5954;
-  --border-emerald: rgba(10, 143, 108, 0.2);
-  --border-silver: rgba(20, 27, 24, 0.12);
+  --color-red: #E11D48;
+  --color-blue: #0284C7;
+  --color-green: #059669;
+  --color-text-primary: #0F172A;
+  --color-text-secondary: #475569;
+  --border-rgb: rgba(15, 23, 42, 0.12);
 }
 
 html.light ::-webkit-scrollbar-track {
-  background: #F7F5F0;
+  background: #F8FAFC;
 }
 
 html.light ::-webkit-scrollbar-thumb {
-  background: rgba(10, 143, 108, 0.3);
+  background: linear-gradient(180deg, #E11D48, #0284C7, #059669);
 }
 
-/* Animated gradient background utility */
-@keyframes emeraldGlow {
+/* Chromatic RGB Glow Animation */
+@keyframes rgbPulse {
   0%, 100% {
-    opacity: 0.4;
+    opacity: 0.35;
     transform: scale(1) translate(0, 0);
   }
-  50% {
-    opacity: 0.65;
-    transform: scale(1.1) translate(15px, -15px);
+  33% {
+    opacity: 0.55;
+    transform: scale(1.08) translate(20px, -15px);
+  }
+  66% {
+    opacity: 0.45;
+    transform: scale(0.95) translate(-15px, 20px);
   }
 }
 
-.animate-emerald-glow {
-  animation: emeraldGlow 8s ease-in-out infinite;
+.animate-rgb-pulse {
+  animation: rgbPulse 10s ease-in-out infinite;
 }
 
-/* Subtle border beam shine */
-@keyframes borderBeam {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+/* Multi-color gradient text */
+.text-rgb-gradient {
+  background: linear-gradient(135deg, #F43F5E 0%, #38BDF8 50%, #10B981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.animate-border-beam {
-  animation: borderBeam 6s linear infinite;
+.text-rgb-gradient-light {
+  background: linear-gradient(135deg, #E11D48 0%, #0284C7 50%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
